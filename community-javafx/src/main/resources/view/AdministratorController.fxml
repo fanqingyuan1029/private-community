@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="720.0" prefWidth="1035.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.fqy.controller.AdministratorController">
+    <SplitPane dividerPositions="0.16453229398663696" layoutX="106.0" layoutY="99.0" orientation="VERTICAL"
+               prefHeight="720.0" prefWidth="807.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="354.0" prefWidth="396.0">
+            <AnchorPane prefHeight="115.2" prefWidth="806.4" AnchorPane.bottomAnchor="0.0"
+                        AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <ImageView fitHeight="720.0" fitWidth="1032.0" layoutX="1.0" layoutY="1.0">
+                    <Image url="@../resource/背景2.png"/>
+                </ImageView>
+                <Label fx:id="adminNameLabel" alignment="BOTTOM_CENTER" layoutX="661.0" layoutY="27.0"
+                       text="尊敬的管理员您好">
+                    <font>
+                        <Font name="KaiTi" size="18.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="-12.0" layoutY="44.0" text="颐养社区管理系统">
+                    <font>
+                        <Font name="KaiTi" size="24.0"/>
+                    </font>
+                    <padding>
+                        <Insets left="40.0"/>
+                    </padding>
+                </Label>
+                <Button fx:id="goBack" layoutX="952.0" layoutY="20.0" mnemonicParsing="false"
+                        onAction="#goBack" style="-fx-background-color: transparent;" text="注销"
+                        textFill="#313d5e" underline="true">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Button>
+                <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="912.0" layoutY="25.0"
+                           onMouseClicked="#settle">
+                    <Image url="@../resource/settle.png"/>
+                </ImageView>
+            </AnchorPane>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+            <SplitPane dividerPositions="0.19234625668449193" layoutX="102.0" layoutY="97.0" prefHeight="597.6"
+                       prefWidth="806.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                       AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="497.0" prefWidth="227.0">
+                    <Accordion prefHeight="597.0" prefWidth="227.0" AnchorPane.bottomAnchor="0.0"
+                               AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                               AnchorPane.topAnchor="0.0">
+                        <panes>
+                            <TitledPane animated="false" onMouseClicked="#StaffClick" text="医生管理">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                            prefWidth="200.0">
+                                    <ListView fx:id="doctorAdmin" layoutY="64.0"
+                                              onMouseClicked="#doctorManage" prefHeight="528.0"
+                                              prefWidth="200.8" AnchorPane.bottomAnchor="0.0"
+                                              AnchorPane.leftAnchor="0.0"
+                                              AnchorPane.rightAnchor="0.0"
+                                              AnchorPane.topAnchor="0.0"/>
+                                </AnchorPane>
+                            </TitledPane>
+                            <TitledPane animated="false" onMouseClicked="#StaffClick" text="护士管理">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                            prefWidth="200.0">
+                                    <ListView fx:id="nurseAdmin" layoutX="-30.0" layoutY="94.0"
+                                              onMouseClicked="#nurseManage" prefHeight="528.0"
+                                              prefWidth="200.8" AnchorPane.bottomAnchor="0.0"
+                                              AnchorPane.leftAnchor="0.0"
+                                              AnchorPane.rightAnchor="0.0"
+                                              AnchorPane.topAnchor="0.0"/>
+                                </AnchorPane>
+                            </TitledPane>
+                            <TitledPane animated="false" onMouseClicked="#StaffClick" text="护工管理">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                            prefWidth="200.0">
+                                    <ListView fx:id="assistantAdmin" layoutY="9.0"
+                                              onMouseClicked="#assistantManage"
+                                              prefHeight="528.0" prefWidth="200.8"
+                                              AnchorPane.bottomAnchor="0.0"
+                                              AnchorPane.leftAnchor="0.0"
+                                              AnchorPane.rightAnchor="0.0"
+                                              AnchorPane.topAnchor="0.0"/>
+                                </AnchorPane>
+                            </TitledPane>
+                            <TitledPane animated="false" text="楼宇管理">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                            prefWidth="200.0">
+                                    <Button fx:id="buildingButton" layoutX="-2.0" layoutY="2.0"
+                                            mnemonicParsing="false" onAction="#buildingButton"
+                                            prefHeight="41.0" prefWidth="195.0" text="楼宇管理"/>
+                                </AnchorPane>
+                            </TitledPane>
+                        </panes>
+                    </Accordion>
+                </AnchorPane>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                    <StackPane prefHeight="150.0" prefWidth="200.0">
+                        <ImageView fitHeight="597.0" fitWidth="832.0"
+                                   StackPane.alignment="TOP_LEFT">
+                            <Image url="@../resource/背景.png"/>
+                        </ImageView>
+                        <AnchorPane fx:id="StaffPane" minHeight="-Infinity" minWidth="-Infinity"
+                                    prefHeight="597.0" prefWidth="789.0" visible="false"
+                                    StackPane.alignment="TOP_LEFT">
+                            <Label layoutX="180.0" layoutY="100.0" text="姓名：">
+                                <font>
+                                    <Font name="KaiTi" size="18.0"/>
+                                </font>
+                            </Label>
+                            <Label layoutX="180.0" layoutY="300.0" text="联系电话：">
+                                <font>
+                                    <Font name="KaiTi" size="18.0"/>
+                                </font>
+                            </Label>
+                            <Label layoutX="180.0" layoutY="200.0" text="职称：">
+                                <font>
+                                    <Font name="KaiTi" size="18.0"/>
+                                </font>
+                            </Label>
+                            <Label fx:id="nameLabel" layoutX="300.0" layoutY="100.0" text="姓名">
+                                <font>
+                                    <Font name="KaiTi" size="18.0"/>
+                                </font>
+                            </Label>
+                            <Label fx:id="typeLabel" layoutX="300.0" layoutY="200.0" text="职称">
+                                <font>
+                                    <Font name="KaiTi" size="18.0"/>
+                                </font>
+                            </Label>
+                            <Label fx:id="UserPhoneLabel" layoutX="300.0" layoutY="300.0"
+                                   text="联系电话">
+                                <font>
+                                    <Font name="KaiTi" size="18.0"/>
+                                </font>
+                            </Label>
+                            <Button layoutX="153.0" layoutY="400.0" mnemonicParsing="false"
+                                    onAction="#removeButton" text="移除职工">
+                                <font>
+                                    <Font name="KaiTi" size="20.0"/>
+                                </font>
+                            </Button>
+                            <Button layoutX="492.0" layoutY="401.0" mnemonicParsing="false"
+                                    onAction="#changeButton" text="修改职工信息">
+                                <font>
+                                    <Font name="KaiTi" size="18.0"/>
+                                </font>
+                            </Button>
+                            <Button layoutX="159.0" layoutY="500.0" mnemonicParsing="false"
+                                    onAction="#addButton" text="添加职工">
+                                <font>
+                                    <Font name="KaiTi" size="18.0"/>
+                                </font>
+                            </Button>
+                            <Separator layoutX="-4.0" layoutY="465.0" prefHeight="4.0"
+                                       prefWidth="862.0"/>
+                            <Button layoutX="510.0" layoutY="500.0" mnemonicParsing="false"
+                                    onAction="#searchButton" text="查询职工">
+                                <font>
+                                    <Font name="KaiTi" size="18.0"/>
+                                </font>
+                            </Button>
+                            <TextField fx:id="nameTextField" layoutX="500.0" layoutY="100.0"
+                                       promptText="姓名">
+                                <font>
+                                    <Font name="KaiTi" size="16.0"/>
+                                </font>
+                            </TextField>
+                            <TextField fx:id="typeTextField" layoutX="500.0" layoutY="200.0"
+                                       promptText="职称">
+                                <font>
+                                    <Font name="KaiTi" size="16.0"/>
+                                </font>
+                            </TextField>
+                            <TextField fx:id="phoneTextField" layoutX="474.0" layoutY="300.0"
+                                       prefHeight="30.0" prefWidth="168.0" promptText="联系电话">
+                                <font>
+                                    <Font name="KaiTi" size="16.0"/>
+                                </font>
+                            </TextField>
+                            <AnchorPane fx:id="settlePane" layoutX="227.0" layoutY="72.0"
+                                        prefHeight="596.8" prefWidth="964.0" visible="false"
+                                        AnchorPane.bottomAnchor="0.0"
+                                        AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                        AnchorPane.topAnchor="0.0">
+                                <ImageView fitHeight="657.0" fitWidth="875.0"
+                                           layoutX="-25.0" layoutY="-30.0">
+                                    <Image url="@../resource/settleBackGround.png"/>
+                                </ImageView>
+                                <Label alignment="BOTTOM_CENTER" layoutX="330.0"
+                                       layoutY="62.0" text="修改个人信息">
+                                    <font>
+                                        <Font name="KaiTi" size="24.0"/>
+                                    </font>
+                                </Label>
+                                <TextField fx:id="adminUserName" disable="true"
+                                           editable="false" layoutX="302.0" layoutY="169.0"
+                                           prefHeight="28.0" prefWidth="200.0"
+                                           promptText="用户名"/>
+                                <TextField fx:id="adminPassword" layoutX="302.0"
+                                           layoutY="249.0" prefHeight="28.0"
+                                           prefWidth="200.0" promptText="密码"/>
+                                <TextField fx:id="adminName" layoutX="302.0" layoutY="329.0"
+                                           prefHeight="28.0" prefWidth="200.0"
+                                           promptText="管理者姓名"/>
+                                <TextField fx:id="phone" layoutX="302.0" layoutY="409.0"
+                                           prefHeight="28.0" prefWidth="200.0"
+                                           promptText="联系电话"/>
+                                <Label layoutX="290.0" layoutY="105.0"
+                                       text="（只需填写您想要修改的内容）">
+                                    <font>
+                                        <Font name="KaiTi" size="16.0"/>
+                                    </font>
+                                </Label>
+                                <Button layoutX="368.0" layoutY="479.0"
+                                        mnemonicParsing="false" onAction="#Finish"
+                                        text="完成">
+                                    <font>
+                                        <Font name="KaiTi" size="20.0"/>
+                                    </font>
+                                </Button>
+                                <Button layoutX="14.0" layoutY="14.0"
+                                        mnemonicParsing="false" onAction="#back" text="返回">
+                                    <font>
+                                        <Font name="KaiTi" size="20.0"/>
+                                    </font>
+                                </Button>
+
+                            </AnchorPane>
+                        </AnchorPane>
+                        <AnchorPane fx:id="buildingPane" minHeight="-Infinity" minWidth="-Infinity"
+                                    prefHeight="416.0" prefWidth="800.0" visible="false"
+                                    StackPane.alignment="TOP_LEFT">
+                            <Label layoutX="134.0" layoutY="27.0" text="楼号">
+                                <font>
+                                    <Font name="KaiTi" size="18.0"/>
+                                </font>
+                            </Label>
+                            <Label layoutX="385.0" layoutY="27.0" text="房间号">
+                                <font>
+                                    <Font name="KaiTi" size="18.0"/>
+                                </font>
+                            </Label>
+                            <ListView fx:id="buildingList" layoutX="71.0" layoutY="57.0"
+                                      onMouseClicked="#chooseBuilding" prefHeight="330.0"
+                                      prefWidth="162.0"/>
+                            <Separator layoutX="-2.0" layoutY="411.0" prefHeight="3.0"
+                                       prefWidth="970.0"/>
+                            <Button fx:id="addBedButton" layoutX="626.0" layoutY="483.0"
+                                    mnemonicParsing="false" onAction="#setBedButton"
+                                    prefHeight="35.0" prefWidth="85.0" text="添加床位">
+                                <font>
+                                    <Font name="KaiTi" size="14.0"/>
+                                </font>
+                            </Button>
+                            <Button fx:id="deleteBedButton" layoutX="626.0" layoutY="538.0"
+                                    mnemonicParsing="false" onAction="#reduceBedButton"
+                                    prefHeight="35.0" prefWidth="85.0" text="减少床位">
+                                <font>
+                                    <Font name="KaiTi" size="14.0"/>
+                                </font>
+                            </Button>
+                            <ListView fx:id="roomList" layoutX="330.0" layoutY="57.0"
+                                      onMouseClicked="#chooseRoom" prefHeight="330.0"
+                                      prefWidth="162.0"/>
+                            <ListView fx:id="bedList" layoutX="590.0" layoutY="57.0"
+                                      onMouseClicked="#chooseBed" prefHeight="330.0"
+                                      prefWidth="162.0"/>
+                            <Label layoutX="650.0" layoutY="27.0" text="床位">
+                                <font>
+                                    <Font name="KaiTi" size="18.0"/>
+                                </font>
+                            </Label>
+                            <Button fx:id="addRoomButton" layoutX="369.0" layoutY="483.0"
+                                    mnemonicParsing="false" onAction="#setRoomButton"
+                                    prefHeight="35.0" prefWidth="85.0" text="添加房间">
+                                <font>
+                                    <Font name="KaiTi" size="14.0"/>
+                                </font>
+                            </Button>
+                            <Button fx:id="deleteRoomButton" layoutX="369.0" layoutY="538.0"
+                                    mnemonicParsing="false" onAction="#reduceRoomButton"
+                                    prefHeight="35.0" prefWidth="85.0" text="减少房间">
+                                <font>
+                                    <Font name="KaiTi" size="14.0"/>
+                                </font>
+                            </Button>
+                            <TextField fx:id="getRoomField" layoutX="346.0" layoutY="439.0"
+                                       prefHeight="23.0" prefWidth="132.0" promptText="输入房间名">
+                                <font>
+                                    <Font name="KaiTi" size="16.0"/>
+                                </font>
+                            </TextField>
+                            <TextField fx:id="getBedField" layoutX="590.0" layoutY="439.0"
+                                       prefHeight="29.0" prefWidth="162.0" promptText="输入床位名">
+                                <font>
+                                    <Font name="KaiTi" size="16.0"/>
+                                </font>
+                            </TextField>
+                            <Button fx:id="addBuildingButton" layoutX="110.0" layoutY="483.0"
+                                    mnemonicParsing="false" onAction="#setBuildingButton"
+                                    prefHeight="35.0" prefWidth="85.0" text="添加楼号">
+                                <font>
+                                    <Font name="KaiTi" size="14.0"/>
+                                </font>
+                            </Button>
+                            <TextField fx:id="getBuildingField" layoutX="86.0" layoutY="439.0"
+                                       prefHeight="23.0" prefWidth="132.0" promptText="输入楼号">
+                                <font>
+                                    <Font name="KaiTi" size="16.0"/>
+                                </font>
+                            </TextField>
+                            <Button fx:id="deleteBuildingButton" layoutX="110.0" layoutY="538.0"
+                                    mnemonicParsing="false" onAction="#reduceBuildingButton"
+                                    prefHeight="35.0" prefWidth="85.0" text="删除楼号">
+                                <font>
+                                    <Font name="KaiTi" size="14.0"/>
+                                </font>
+                            </Button>
+                        </AnchorPane>
+                    </StackPane>
+                </AnchorPane>
+            </SplitPane>
+        </AnchorPane>
+    </SplitPane>
+</AnchorPane>

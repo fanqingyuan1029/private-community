@@ -1,0 +1,22 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fqy.crm.dao.building.BedDao">
+<!--    <resultMap id="re" type="Integer">-->
+<!--        -->
+<!--    </resultMap>-->
+<!--    <select id="selectById"  resultMap="re">-->
+<!--        select id, room_id, name, bed_type, create_time from tb_bed-->
+<!--    </select>-->
+
+    <update id="update" parameterType="Bed">
+        update tb_bed
+        <set>
+            <if test="'' != bed.name and null != bed.name">
+                name = #{bed.name},
+            </if>
+        </set>
+        where id = #{bed.id}
+    </update>
+
+</mapper>

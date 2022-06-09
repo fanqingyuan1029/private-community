@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "start": "node .output/server/index.mjs"
+  },
+  "devDependencies": {
+    "nuxt3": "latest"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.1.8",
+    "axios": "^0.26.1",
+    "element-plus": "^2.1.9",
+    "naive-ui": "^2.28.0",
+    "pinia": "^2.0.13",
+    "unplugin-vue-components": "^0.19.3"
+  }
+}

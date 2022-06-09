@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="320.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fqy.controller.LogFrameController">
+    <SplitPane dividerPositions="0.2675879396984925" orientation="VERTICAL" prefHeight="320.0" prefWidth="400.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="50.0" prefWidth="400.0">
+            <ImageView fitHeight="166.0" fitWidth="408.0" layoutX="-5.0" layoutY="-15.0">
+                <Image url="@../resource/背景3.png"/>
+            </ImageView>
+            <Label layoutX="105.0" layoutY="23.0" prefHeight="35.0" prefWidth="196.0" text="颐养社区管理系统">
+                <font>
+                    <Font size="24.0"/>
+                </font>
+            </Label>
+        </AnchorPane>
+        <AnchorPane maxHeight="320.0" maxWidth="400.0" minHeight="0.0" minWidth="0.0" prefHeight="250.0"
+                    prefWidth="400.0">
+            <ImageView fitHeight="238.0" fitWidth="327.0" layoutX="71.0" layoutY="-159.0">
+                <Image url="@../resource/背景5.png"/>
+            </ImageView>
+            <HBox layoutX="108.0" layoutY="38.0" prefHeight="35.0" prefWidth="182.0"
+                  AnchorPane.bottomAnchor="157.0" AnchorPane.leftAnchor="108.0" AnchorPane.rightAnchor="108.0"
+                  AnchorPane.topAnchor="38.0">
+                <ImageView fitHeight="20.0" fitWidth="20.0">
+                    <Image url="@../resource/usernameImage.png"/>
+                </ImageView>
+                <TextField fx:id="usernameTextField" prefHeight="24.0" promptText="用户名">
+                    <HBox.margin>
+                        <Insets/>
+                    </HBox.margin>
+                </TextField>
+            </HBox>
+            <HBox layoutX="108.0" layoutY="79.0" prefHeight="35.0" prefWidth="209.0"
+                  AnchorPane.bottomAnchor="116.0" AnchorPane.leftAnchor="108.0" AnchorPane.rightAnchor="81.0"
+                  AnchorPane.topAnchor="79.0">
+                <ImageView fitHeight="12.0" fitWidth="20.0" rotate="-90.0">
+                    <HBox.margin>
+                        <Insets top="6.0"/>
+                    </HBox.margin>
+                    <Image url="@../resource/passwordImage.png"/>
+                </ImageView>
+                <PasswordField fx:id="passwordTextField" prefHeight="24.0" promptText="密码"/>
+                <Button fx:id="restButton" mnemonicParsing="false" onAction="#resetButtonEvent"
+                        prefHeight="18.0" prefWidth="24.0" style="-fx-background-color: transparent;"
+                        text="x" textFill="#000000fe">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                    <opaqueInsets>
+                        <Insets/>
+                    </opaqueInsets>
+                    <padding>
+                        <Insets left="-8.0"/>
+                    </padding>
+                </Button>
+            </HBox>
+
+            <Button fx:id="SignIn" layoutX="139.0" layoutY="143.0" mnemonicParsing="false" onAction="#SignIn"
+                    prefHeight="45.0" prefWidth="120.0" text="登录">
+                <font>
+                    <Font size="16.0"/>
+                </font>
+            </Button>
+            <!--                  <Button fx:id="Signup" layoutY="204.0" mnemonicParsing="false" onAction="#Signup" prefHeight="23.0" prefWidth="134.0" style="-fx-background-color: transparent;" text="没有账号，我要注册" textFill="#0d80e4" underline="true" />-->
+        </AnchorPane>
+    </SplitPane>
+</AnchorPane>

@@ -1,0 +1,27 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fqy.crm.dao.UserDao">
+
+    <update id="update" parameterType="User">
+        update tb_user
+        <set>
+            <if test="''!=user.password and null !=user.password  ">
+                password = #{user.password},
+            </if>
+            <if test="''!=user.name and null !=user.name  ">
+                name = #{user.name},
+            </if>
+            <if test="''!=user.type and null !=user.type  ">
+                type = #{user.type},
+            </if>
+            <if test="''!=user.phone and null !=user.phone  ">
+                phone = #{user.phone},
+            </if>
+            last_update_time = now()
+        </set>
+        where id = #{user.id}
+    </update>
+
+
+</mapper>

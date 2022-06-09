@@ -1,0 +1,30 @@
+###
+POST http://localhost:8123/user/login
+Content-Type: application/x-www-form-urlencoded
+
+password=123456
+
+###
+
+
+###
+POST http://localhost:8123/user/register
+Content-Type: application/json
+
+{
+  "username": "sdfd",
+  "password": "rew",
+  "name": "热吻",
+  "type": "1",
+  "phone": "15465"
+
+}
+
+###
+###
+POST http://localhost:8123/user/login
+Content-Type: application/x-www-form-urlencoded
+
+username=1236&&password=555
+
+###

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.fqy.controller.AssessController">
+   <ImageView fitHeight="700.0" fitWidth="800.0">
+      <Image url="@../resource/图片6.png"/>
+   </ImageView>
+   <AnchorPane fx:id="answerPaperPane" prefHeight="700.0" prefWidth="800.0" visible="false">
+      <Label fx:id="title" alignment="TOP_LEFT" layoutX="40.0" layoutY="25.0" prefHeight="96.0" prefWidth="720.0"
+             text="题目" wrapText="true">
+         <font>
+            <Font name="KaiTi" size="24.0"/>
+         </font>
+      </Label>
+      <RadioButton fx:id="radioButton1" alignment="TOP_LEFT" layoutX="80.0" layoutY="127.0" mnemonicParsing="false"
+                   onAction="#optionClick" prefHeight="80.0" prefWidth="640.0" text="A：" wrapText="true">
+         <font>
+            <Font name="KaiTi" size="20.0"/>
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="radioButton2" alignment="TOP_LEFT" layoutX="80.0" layoutY="217.0" mnemonicParsing="false"
+                   onAction="#optionClick" prefHeight="80.0" prefWidth="640.0" text="B:" wrapText="true">
+         <font>
+            <Font name="KaiTi" size="20.0"/>
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="radioButton3" alignment="TOP_LEFT" layoutX="80.0" layoutY="307.0" mnemonicParsing="false"
+                   onAction="#optionClick" prefHeight="80.0" prefWidth="640.0" text="C:" wrapText="true">
+         <font>
+            <Font name="KaiTi" size="20.0"/>
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="radioButton4" alignment="TOP_LEFT" layoutX="80.0" layoutY="397.0" mnemonicParsing="false"
+                   onAction="#optionClick" prefHeight="80.0" prefWidth="640.0" text="D：" wrapText="true">
+         <font>
+            <Font name="KaiTi" size="20.0"/>
+         </font>
+      </RadioButton>
+      <Button fx:id="finishButton" layoutX="324.0" layoutY="638.0" mnemonicParsing="false" onAction="#finishPaper"
+              prefHeight="30.0" prefWidth="150.0" text="结束测评" textAlignment="CENTER" textFill="#4c49a3">
+         <font>
+            <Font name="KaiTi" size="20.0"/>
+         </font>
+      </Button>
+      <ImageView fx:id="goButton" fitHeight="60.0" fitWidth="60.0" layoutX="444.0" layoutY="508.0"
+                 onMouseClicked="#go">
+         <Image url="@../resource/go.png"/>
+      </ImageView>
+      <ImageView fx:id="backButton" fitHeight="60.0" fitWidth="60.0" layoutX="294.0" layoutY="508.0"
+                 onMouseClicked="#back" rotate="180.0">
+         <Image url="@../resource/go.png"/>
+      </ImageView>
+      <Label fx:id="indexLabel" layoutX="345.0" layoutY="590.0" text="80">
+         <font>
+            <Font name="KaiTi" size="20.0"/>
+         </font>
+      </Label>
+      <Label fx:id="totalLabel" layoutX="426.0" layoutY="590.0" text="100">
+         <font>
+            <Font name="KaiTi" size="20.0"/>
+         </font>
+      </Label>
+      <Label fx:id="totalLabel1" layoutX="399.0" layoutY="590.0" text="/">
+         <font>
+            <Font name="KaiTi" size="20.0"/>
+         </font>
+      </Label>
+   </AnchorPane>
+   <AnchorPane fx:id="choosePaperPane" prefHeight="700.0" prefWidth="800.0">
+      <TableView fx:id="paperTable" layoutX="40.0" layoutY="40.0" prefHeight="620.0" prefWidth="600.0">
+         <columns>
+            <TableColumn fx:id="paperIdColumn" minWidth="50.0" prefWidth="50.0" text="序号"/>
+            <TableColumn fx:id="paperNameColumn" prefWidth="150.0" text="问卷名称"/>
+            <TableColumn fx:id="paperCreateTimeColumn" minWidth="100.0" prefWidth="134.0" text="开始时间"/>
+            <TableColumn fx:id="paperEndTimeColumn" minWidth="100.0" prefWidth="134.0" text="截止时间"/>
+            <TableColumn fx:id="paperVersionColumn" minWidth="40.0" prefWidth="50.0" text="轮次"/>
+            <TableColumn fx:id="paperStatusColumn" minWidth="80.0" prefWidth="0.0" text="状态"/>
+         </columns>
+      </TableView>
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="687.0" layoutY="559.0" onMouseClicked="#startPaper">
+         <Image url="@../resource/评价.png"/>
+      </ImageView>
+      <Label layoutX="669.0" layoutY="634.0" onMouseClicked="#startPaper" text="开始评估">
+         <font>
+            <Font name="KaiTi" size="24.0"/>
+         </font>
+      </Label>
+      <Label fx:id="selectedOldManName" layoutX="669.0" layoutY="119.0" onMouseClicked="#startPaper" prefWidth="96.0"
+             text="老人姓名" wrapText="true">
+         <font>
+            <Font name="KaiTi" size="24.0"/>
+         </font>
+      </Label>
+   </AnchorPane>
+</AnchorPane>

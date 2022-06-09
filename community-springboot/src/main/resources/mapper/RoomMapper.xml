@@ -1,0 +1,15 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fqy.crm.dao.building.RoomDao">
+    <update id="update" parameterType="Room">
+        update tb_room
+        <set>
+            <if test="'' != room.name and null != room.name">
+                name = #{room.name},
+            </if>
+        </set>
+        where id = #{room.id}
+    </update>
+
+</mapper>

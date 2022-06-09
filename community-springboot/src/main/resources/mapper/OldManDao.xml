@@ -1,0 +1,34 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fqy.crm.dao.OldManDao">
+
+    <update id="update" parameterType="OldMan">
+        update tb_oldman
+        <set>
+            <if test="''!=oldMan.name and null !=oldMan.name ">
+                name = #{oldMan.name},
+            </if>
+            <if test="''!=oldMan.sex and null !=oldMan.sex ">
+                sex = #{oldMan.sex},
+            </if>
+            <if test="''!=oldMan.age and null !=oldMan.age ">
+                age = #{oldMan.age},
+            </if>
+            <if test="''!=oldMan.phone and null !=oldMan.phone ">
+                phone = #{oldMan.phone},
+            </if>
+            <if test="''!=oldMan.contactName and null !=oldMan.contactName ">
+                contact_name = #{oldMan.contactName},
+            </if>
+            <if test="''!=oldMan.contactPhone and null !=oldMan.contactPhone ">
+                contact_phone = #{oldMan.contactPhone},
+            </if>
+            <if test="''!=oldMan.bedId and null !=oldMan.bedId ">
+                bed_id = #{oldMan.bedId},
+            </if>
+            last_update_time = now()
+        </set>
+        where id = #{oldMan.id}
+    </update>
+</mapper>

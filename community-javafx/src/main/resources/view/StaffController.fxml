@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.fqy.controller.StaffController">
+    <AnchorPane minHeight="0.0" minWidth="0.0">
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                    prefHeight="140.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0"
+                    AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+            <ImageView fitHeight="140.0" fitWidth="1200.0" AnchorPane.bottomAnchor="112.0"
+                       AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">
+                <Image url="@../resource/背景2.png"/>
+            </ImageView>
+            <Label layoutX="378.0" layoutY="22.0" prefHeight="38.0" prefWidth="367.0" text="颐养社区管理系统">
+                <font>
+                    <Font name="KaiTi" size="36.0"/>
+                </font>
+                <padding>
+                    <Insets left="40.0"/>
+                </padding>
+            </Label>
+            <ImageView fitHeight="140.0" fitWidth="154.0" layoutX="1048.0">
+                <Image url="@../resource/文案1.PNG"/>
+            </ImageView>
+
+
+            <Button fx:id="goBack" layoutX="1144.0" layoutY="18.0" mnemonicParsing="false" onAction="#goBack"
+                    style="-fx-background-color: transparent;" text="注销" textFill="#0d80e4" underline="true"/>
+            <Label alignment="CENTER" layoutX="814.0" layoutY="4.0" prefHeight="20.0" prefWidth="234.0"
+                   text="欢迎，亲爱的">
+                <font>
+                    <Font name="KaiTi" size="18.0"/>
+                </font>
+            </Label>
+            <Label fx:id="nameLabel" alignment="CENTER" layoutX="814.0" layoutY="28.0" prefHeight="20.0"
+                   prefWidth="234.0" textFill="WHITE" wrapText="true">
+                <font>
+                    <Font name="KaiTi" size="18.0"/>
+                </font>
+            </Label>
+
+
+            <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="1120.0" layoutY="15.0" onMouseClicked="#settle">
+                <Image url="@../resource/settle.png"/>
+            </ImageView>
+        </AnchorPane>
+    </AnchorPane>
+    <AnchorPane layoutY="141.0" minHeight="0.0" minWidth="0.0">
+        <AnchorPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0"
+                    prefHeight="580.0" prefWidth="240.0">
+            <Accordion layoutX="-16.0" layoutY="32.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                       minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0"
+                       AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                       AnchorPane.topAnchor="0.0">
+                <panes>
+                    <TitledPane animated="false" text="用户管理">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="140.0">
+                            <Button layoutX="-1.0" mnemonicParsing="false" onAction="#oldManManagePage"
+                                    prefHeight="40.0" prefWidth="240.0" text="老人管理"/>
+                            <Button layoutX="-1.0" layoutY="40.0" mnemonicParsing="false"
+                                    onAction="#bedManagePage" prefHeight="40.0" prefWidth="240.0"
+                                    text="房间管理"/>
+                        </AnchorPane>
+                    </TitledPane>
+                    <TitledPane animated="false" text="问卷管理">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="140.0">
+                            <Button layoutX="-1.0" mnemonicParsing="false" onAction="#paperManagePage"
+                                    prefHeight="40.0" prefWidth="240.0" text="模板管理"/>
+                            <Button layoutX="-1.0" layoutY="40.0" mnemonicParsing="false"
+                                    onAction="#questionManagePage" prefHeight="40.0" prefWidth="240.0"
+                                    text="问题管理"/>
+                            <Button layoutY="80.0" mnemonicParsing="false"
+                                    onAction="#publishPaperManagePage" prefHeight="40.0"
+                                    prefWidth="240.0" text="问卷管理"/>
+                            <Button layoutY="120.0" mnemonicParsing="false" onAction="#answerManagePage"
+                                    prefHeight="40.0" prefWidth="240.0" text="回答管理"/>
+                        </AnchorPane>
+                    </TitledPane>
+                </panes>
+            </Accordion>
+        </AnchorPane>
+        <AnchorPane layoutX="240.0" layoutY="1.0" minHeight="0.0" minWidth="0.0" prefHeight="580.0"
+                    prefWidth="960.0">
+            <StackPane layoutX="218.0" layoutY="144.0" prefHeight="580.0" prefWidth="960.0"
+                       AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                       AnchorPane.topAnchor="0.0">
+                <ImageView fitHeight="582.0" fitWidth="962.0" layoutX="3.0">
+                    <Image url="@../resource/背景.png"/>
+                </ImageView>
+                <AnchorPane fx:id="paperAnswerPane" prefHeight="580.0" prefWidth="960.0" visible="false">
+                    <TableView fx:id="answerQuestionTable" layoutX="80.0" layoutY="40.0"
+                               maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0"
+                               prefWidth="800.0">
+                        <columns>
+                            <TableColumn fx:id="answerPaperColumn" prefWidth="200.0" text="问卷名称"/>
+                            <TableColumn fx:id="answerOldManColumn" prefWidth="200.0" text="老人姓名"/>
+                            <TableColumn fx:id="answerDateColumn" prefWidth="200.0" text="回答时间"/>
+                            <TableColumn fx:id="answerPaperVersionColumn" prefWidth="99.0" text="问卷轮次"/>
+                            <TableColumn fx:id="answerOperatorColumn" prefWidth="99.0" text="操作"/>
+                        </columns>
+                    </TableView>
+                </AnchorPane>
+                <AnchorPane fx:id="oldManPane" prefHeight="570.0" prefWidth="804.0" visible="false">
+                    <AnchorPane fx:id="oldManHeader" prefHeight="126.0" prefWidth="960.0">
+                        <Button fx:id="toAddOldManPageButton" layoutX="60.0" layoutY="46.0"
+                                mnemonicParsing="false" onAction="#preAddOldMan" prefHeight="35.0"
+                                prefWidth="100.0" text="添加">
+                            <font>
+                                <Font name="KaiTi" size="20.0"/>
+                            </font>
+                        </Button>
+                        <Button fx:id="toChangeOldManPageButton" layoutX="200.0" layoutY="46.0"
+                                mnemonicParsing="false" onAction="#preUpdateOldMan"
+                                prefHeight="35.0" prefWidth="100.0" text="修改">
+                            <font>
+                                <Font name="KaiTi" size="20.0"/>
+                            </font>
+                        </Button>
+                        <Button fx:id="deleteOldManButton" layoutX="340.0" layoutY="46.0"
+                                mnemonicParsing="false" onAction="#deleteOldMan" prefHeight="35.0"
+                                prefWidth="100.0" text="删除">
+                            <font>
+                                <Font name="KaiTi" size="20.0"/>
+                            </font>
+                        </Button>
+                        <Button fx:id="searchOldManButton" layoutX="810.0" layoutY="46.0"
+                                mnemonicParsing="false" onAction="#searchOldMan" prefHeight="35.0"
+                                prefWidth="100.0" text="查询">
+                            <font>
+                                <Font name="KaiTi" size="20.0"/>
+                            </font>
+                        </Button>
+                        <TextField fx:id="oldManSearch" layoutX="640.0" layoutY="46.0"
+                                   prefHeight="30.0" prefWidth="154.0" promptText="请输入">
+                            <font>
+                                <Font name="KaiTi" size="16.0"/>
+                            </font>
+                        </TextField>
+                        <Button fx:id="toPaperAskPageButton" layoutX="480.0" layoutY="46.0"
+                                mnemonicParsing="false" onAction="#toPaperAskPage" prefHeight="35.0"
+                                prefWidth="108.0" text="开始评估">
+                            <font>
+                                <Font name="KaiTi" size="20.0"/>
+                            </font>
+                        </Button>
+                    </AnchorPane>
+                    <TableView fx:id="oldManTable" layoutX="35.0" layoutY="135.0"
+                               maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                        <columns>
+                            <TableColumn fx:id="oldManNameColumn" prefWidth="100.0" text="姓名"/>
+                            <TableColumn fx:id="oldManSexColumn" prefWidth="100.0" text="性别"/>
+                            <TableColumn fx:id="oldManAgeColumn" prefWidth="100.0" text="年龄"/>
+                            <TableColumn fx:id="oldManPhoneColumn" prefWidth="150.0" text="联系电话"/>
+                            <TableColumn fx:id="oldManContactNameColumn" prefWidth="100.0"
+                                         text="紧急联系人"/>
+                            <TableColumn fx:id="oldManContactPhoneColumn" prefWidth="150.0"
+                                         text="紧急联系电话"/>
+                            <TableColumn fx:id="oldManRoomColumn" minWidth="0.0" prefWidth="200.0"
+                                         text="房间"/>
+                        </columns>
+                    </TableView>
+                    <AnchorPane fx:id="oldManAddPane" layoutX="1.0" layoutY="-3.0" prefHeight="581.0"
+                                prefWidth="960.0" visible="false">
+                        <TextField fx:id="oldManName" layoutX="410.0" layoutY="124.0"
+                                   prefHeight="32.0" prefWidth="173.0" promptText="姓名">
+                            <font>
+                                <Font name="KaiTi" size="18.0"/>
+                            </font>
+                        </TextField>
+                        <RadioButton fx:id="sexButton1" layoutX="430.0" layoutY="184.0"
+                                     mnemonicParsing="false" selected="true" text="男">
+                            <font>
+                                <Font name="KaiTi" size="18.0"/>
+                            </font>
+                        </RadioButton>
+                        <RadioButton fx:id="sexButton2" layoutX="505.0" layoutY="184.0"
+                                     mnemonicParsing="false" text="女">
+                            <font>
+                                <Font name="KaiTi" size="18.0"/>
+                            </font>
+                        </RadioButton>
+                        <TextField fx:id="oldManAge" layoutX="410.0" layoutY="244.0"
+                                   prefHeight="32.0" prefWidth="173.0" promptText="年龄">
+                            <font>
+                                <Font name="KaiTi" size="18.0"/>
+                            </font>
+                        </TextField>
+                        <TextField fx:id="oldManPhone" layoutX="410.0" layoutY="304.0"
+                                   prefHeight="32.0" prefWidth="173.0" promptText="联系电话">
+                            <font>
+                                <Font name="KaiTi" size="18.0"/>
+                            </font>
+                        </TextField>
+                        <TextField fx:id="oldManContactName" layoutX="410.0" layoutY="364.0"
+                                   prefHeight="32.0" prefWidth="173.0" promptText="紧急联系人">
+                            <font>
+                                <Font name="KaiTi" size="18.0"/>
+                            </font>
+                        </TextField>
+                        <TextField fx:id="oldManContactPhone" layoutX="410.0" layoutY="424.0"
+                                   prefHeight="32.0" prefWidth="173.0" promptText="紧急联系电话">
+                            <font>
+                                <Font name="KaiTi" size="18.0"/>
+                            </font>
+                        </TextField>
+                        <Button fx:id="addOrUpdateOldManButton" layoutX="447.0" layoutY="490.0"
+                                mnemonicParsing="false" onAction="#oldManAdd" prefHeight="35.0"
+                                prefWidth="100.0" text="添加">
+                            <font>
+                                <Font name="KaiTi" size="20.0"/>
+                            </font>
+                        </Button>
+                        <Label fx:id="preOldManName" layoutX="345.0" layoutY="130.0" text="姓名：">
+                            <font>
+                                <Font name="KaiTi" size="18.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="preOldManSex" layoutX="345.0" layoutY="190.0" text="性别：">
+                            <font>
+                                <Font name="KaiTi" size="18.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="preOldManAge" layoutX="345.0" layoutY="250.0" text="年龄：">
+                            <font>
+                                <Font name="KaiTi" size="18.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="preOldManPhone" layoutX="309.0" layoutY="310.0" text="联系电话：">
+                            <font>
+                                <Font name="KaiTi" size="18.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="preOldManContactName" layoutX="291.0" layoutY="370.0"
+                               text="紧急联系人：">
+                            <font>
+                                <Font name="KaiTi" size="18.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="preOldManContactPhone" layoutX="255.0" layoutY="430.0"
+                               text="紧急联系人电话：">
+                            <font>
+                                <Font name="KaiTi" size="18.0"/>
+                            </font>
+                        </Label>
+                        <Button fx:id="backButton" layoutX="60.0" layoutY="46.0"
+                                mnemonicParsing="false" onAction="#backButton" prefHeight="35.0"
+                                prefWidth="100.0" text="返回">
+                            <!--                                                <effect>-->
+                            <!--                                                    <InnerShadow>-->
+                            <!--                                                        <color>-->
+                            <!--                                                            <Color blue="0.7335282564163208" green="0.7335282564163208"-->
+                            <!--                                                                   red="0.7473683953285217"/>-->
+                            <!--                                                        </color>-->
+                            <!--                                                    </InnerShadow>-->
+                            <!--                                                </effect>-->
+                            <font>
+                                <Font name="KaiTi" size="20.0"/>
+                            </font>
+                        </Button>
+                    </AnchorPane>
+                </AnchorPane>
+                <AnchorPane fx:id="bedPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+                    <Label layoutX="123.0" layoutY="53.0" text="楼号">
+                        <font>
+                            <Font name="KaiTi" size="24.0"/>
+                        </font>
+                    </Label>
+                    <Label layoutX="345.0" layoutY="53.0" text="房间">
+                        <font>
+                            <Font name="KaiTi" size="24.0"/>
+                        </font>
+                    </Label>
+                    <Label layoutX="567.0" layoutY="53.0" text="床位">
+                        <font>
+                            <Font name="KaiTi" size="24.0"/>
+                        </font>
+                    </Label>
+                    <ListView fx:id="buildingList" layoutX="72.0" layoutY="100.0"
+                              onMouseClicked="#chooseBuilding" prefHeight="300.0" prefWidth="150.0"/>
+                    <ListView fx:id="roomList" layoutX="294.0" layoutY="100.0"
+                              onMouseClicked="#chooseRoom" prefHeight="300.0" prefWidth="150.0"/>
+                    <ListView fx:id="bedList" layoutX="516.0" layoutY="100.0"
+                              onMouseClicked="#chooseBed" prefHeight="300.0" prefWidth="150.0"/>
+                    <AnchorPane fx:id="oldManInBedPane" layoutX="700.0" prefHeight="580.0"
+                                prefWidth="240.0" visible="false">
+                        <Label layoutX="81.0" layoutY="53.0" text="已入住">
+                            <font>
+                                <Font name="KaiTi" size="24.0"/>
+                            </font>
+                        </Label>
+                        <Button layoutX="84.0" layoutY="450.0" mnemonicParsing="false"
+                                onAction="#oldManOutBed" text="退床">
+                            <font>
+                                <Font name="KaiTi" size="20.0"/>
+                            </font>
+                        </Button>
+                        <Label fx:id="oldManInBedName" layoutX="88.0" layoutY="230.0" text="张无忌">
+                            <font>
+                                <Font name="KaiTi" size="20.0"/>
+                            </font>
+                        </Label>
+                    </AnchorPane>
+                    <AnchorPane fx:id="oldManNotInBedPane" layoutX="700.0" prefHeight="580.0"
+                                prefWidth="240.0" visible="false">
+                        <TableView fx:id="notInBedOldManTable" layoutX="38.0" layoutY="100.0"
+                                   onMouseClicked="#chooseOldMan" prefHeight="300.0"
+                                   prefWidth="150.0">
+                            <columns>
+                                <TableColumn fx:id="notInBedOldManNameColumn" editable="false"
+                                             maxWidth="148.0" minWidth="148.0" prefWidth="148.0"
+                                             resizable="false" sortable="false" text="老人姓名"/>
+                            </columns>
+                        </TableView>
+                        <Button fx:id="oldManIntoBedButton" layoutX="83.0" layoutY="450.0"
+                                mnemonicParsing="false" onAction="#oldManIntoBed" text="入住"
+                                visible="false">
+                            <font>
+                                <Font name="KaiTi" size="20.0"/>
+                            </font>
+                        </Button>
+                        <Label layoutX="65.0" layoutY="53.0" text="分配老人">
+                            <font>
+                                <Font name="KaiTi" size="24.0"/>
+                            </font>
+                        </Label>
+                    </AnchorPane>
+                    <Label fx:id="oldManInformation" disable="true" layoutX="83.0" layoutY="414.0"
+                           text="信息" visible="false">
+                        <font>
+                            <Font name="KaiTi" size="20.0"/>
+                        </font>
+                    </Label>
+                </AnchorPane>
+                <AnchorPane fx:id="questionPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+                    <TextField fx:id="questionSearch" layoutX="518.0" layoutY="40.0" prefHeight="30.0"
+                               prefWidth="340.0" promptText="请输入..."/>
+                    <ImageView fitHeight="30.0" fitWidth="36.0" focusTraversable="true" layoutX="868.0"
+                               layoutY="40.0" onMouseClicked="#questionSearch" preserveRatio="true">
+                        <Image url="@../resource/search.jpg"/>
+                    </ImageView>
+                    <Button layoutX="777.0" layoutY="450.0" mnemonicParsing="false"
+                            onAction="#addQuestion" prefHeight="30.0" text="新建">
+                        <font>
+                            <Font name="KaiTi" size="18.0"/>
+                        </font>
+                    </Button>
+                    <Separator layoutY="350.0" prefHeight="3.0" prefWidth="970.0"/>
+                    <TextField fx:id="questionText" layoutX="55.0" layoutY="374.0" prefHeight="30.0"
+                               prefWidth="340.0" promptText="问题">
+                        <font>
+                            <Font name="KaiTi" size="16.0"/>
+                        </font>
+                    </TextField>
+                    <TextField fx:id="optionOne" layoutX="468.0" layoutY="374.0" prefHeight="24.0"
+                               prefWidth="240.0" promptText="选项一">
+                        <font>
+                            <Font name="KaiTi" size="16.0"/>
+                        </font>
+                    </TextField>
+                    <TextField fx:id="optionTwo" layoutX="468.0" layoutY="422.0" prefHeight="24.0"
+                               prefWidth="240.0" promptText="选项二">
+                        <font>
+                            <Font name="KaiTi" size="16.0"/>
+                        </font>
+                    </TextField>
+                    <TextField fx:id="optionThree" layoutX="468.0" layoutY="470.0" prefHeight="24.0"
+                               prefWidth="240.0" promptText="选项三">
+                        <font>
+                            <Font name="KaiTi" size="16.0"/>
+                        </font>
+                    </TextField>
+                    <TextField fx:id="optionFour" layoutX="468.0" layoutY="520.0" prefHeight="24.0"
+                               prefWidth="240.0" promptText="选项四">
+                        <font>
+                            <Font name="KaiTi" size="16.0"/>
+                        </font>
+                    </TextField>
+                    <TableView fx:id="questionTable" layoutX="58.0" layoutY="40.0"
+                               onMouseClicked="#chooseQuestion" prefHeight="250.0" prefWidth="410.0">
+                        <columns>
+                            <TableColumn fx:id="questionIdColumn" editable="false" maxWidth="100.0"
+                                         minWidth="100.0" prefWidth="100.0" resizable="false"
+                                         text="序号"/>
+                            <TableColumn fx:id="questionNameColumn" editable="false" maxWidth="300.0"
+                                         minWidth="300.0" prefWidth="300.0" resizable="false"
+                                         text="问题"/>
+                        </columns>
+                    </TableView>
+                    <ListView fx:id="optionList" layoutX="517.0" layoutY="126.0" prefHeight="110.0"
+                              prefWidth="390.0"/>
+                    <Label layoutX="518.0" layoutY="89.0" prefHeight="34.0" prefWidth="93.0" text="选项：">
+                        <font>
+                            <Font name="KaiTi" size="24.0"/>
+                        </font>
+                    </Label>
+                    <AnchorPane fx:id="questionUpdatePane" layoutY="300.0" maxHeight="-Infinity"
+                                maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                                prefHeight="50.0" prefWidth="970.0" visible="false">
+                        <Button layoutX="537.0" layoutY="9.0" mnemonicParsing="false"
+                                onAction="#commitQuestionUpdate" text="确定">
+                            <font>
+                                <Font name="KaiTi" size="18.0"/>
+                            </font>
+                        </Button>
+                        <TextField fx:id="questionUpdateField" layoutX="177.0" layoutY="10.0"
+                                   prefHeight="30.0" prefWidth="340.0" promptText="修改后的文本（问题或选项）">
+                            <font>
+                                <Font name="KaiTi" size="16.0"/>
+                            </font>
+                        </TextField>
+                        <Button layoutX="614.0" layoutY="9.0" mnemonicParsing="false"
+                                onAction="#cancelUpdateQuestion" text="取消">
+                            <font>
+                                <Font name="KaiTi" size="18.0"/>
+                            </font>
+                        </Button>
+                        <Label fx:id="questionUpdateLabel" layoutX="56.0" layoutY="8.0"
+                               prefHeight="34.0" prefWidth="121.0" text="修改问题：">
+                            <font>
+                                <Font name="KaiTi" size="24.0"/>
+                            </font>
+                        </Label>
+                    </AnchorPane>
+                    <AnchorPane fx:id="questionOperatePane" layoutX="485.0" layoutY="236.0"
+                                prefHeight="64.0" prefWidth="476.0" visible="false">
+                        <Button fx:id="preUpdateQuestionButton" layoutX="34.0" layoutY="16.0"
+                                mnemonicParsing="false" onAction="#preUpdateQuestion"
+                                prefWidth="100.0" text="修改问题">
+                            <font>
+                                <Font name="KaiTi" size="18.0"/>
+                            </font>
+                        </Button>
+                        <Button fx:id="deleteQuestionButton" layoutX="177.0" layoutY="16.0"
+                                mnemonicParsing="false" onAction="#deleteQuestion" prefWidth="100.0"
+                                text="删除问题">
+                            <font>
+                                <Font name="KaiTi" size="18.0"/>
+                            </font>
+                        </Button>
+                        <Button fx:id="preUpdateOptionButton" layoutX="319.0" layoutY="16.0"
+                                mnemonicParsing="false" onAction="#preUpdateOption"
+                                prefWidth="100.0" text="修改选项">
+                            <font>
+                                <Font name="KaiTi" size="18.0"/>
+                            </font>
+                        </Button>
+                    </AnchorPane>
+                </AnchorPane>
+                <AnchorPane fx:id="paperPane" prefHeight="580.0" prefWidth="980.0" visible="false">
+                    <TableView fx:id="paperTable" layoutX="49.0" layoutY="14.0" maxHeight="-Infinity"
+                               maxWidth="-Infinity" onMouseClicked="#choosePaper" prefHeight="436.0"
+                               prefWidth="344.0">
+                        <columns>
+                            <TableColumn fx:id="paperIdColumn" editable="false" prefWidth="50.0"
+                                         resizable="false" text="序号"/>
+                            <TableColumn fx:id="paperNameColumn" editable="false" prefWidth="148.0"
+                                         resizable="false" text="问卷模板"/>
+                            <TableColumn fx:id="paperCreateTimeColumn" editable="false"
+                                         prefWidth="150.0" resizable="false" text="创建时间"/>
+                        </columns>
+                    </TableView>
+                    <Button layoutX="49.0" layoutY="504.0" mnemonicParsing="false"
+                            onAction="#addPaperButton" text="新增模板">
+                        <font>
+                            <Font name="KaiTi" size="18.0"/>
+                        </font>
+                    </Button>
+                    <Button layoutX="154.0" layoutY="504.0" mnemonicParsing="false"
+                            onAction="#deletePaperButton" text="删除模板">
+                        <font>
+                            <Font name="KaiTi" size="18.0"/>
+                        </font>
+                    </Button>
+                    <Button layoutX="259.0" layoutY="505.0" mnemonicParsing="false"
+                            onAction="#changePaperButton" prefHeight="32.0" prefWidth="60.0" text="更新"
+                            wrapText="true">
+                        <font>
+                            <Font name="KaiTi" size="18.0"/>
+                        </font>
+                    </Button>
+                    <Button layoutX="333.0" layoutY="463.0" mnemonicParsing="false"
+                            onAction="#makePaperButton" prefHeight="75.0" prefWidth="60.0" text="制作问卷"
+                            textAlignment="CENTER" wrapText="true">
+                        <font>
+                            <Font name="KaiTi" size="18.0"/>
+                        </font>
+                    </Button>
+                    <TextField fx:id="paperName" layoutX="50.0" layoutY="462.0" prefHeight="34.0"
+                               prefWidth="270.0" promptText="问卷名称">
+                        <font>
+                            <Font name="KaiTi" size="18.0"/>
+                        </font>
+                    </TextField>
+                    <AnchorPane fx:id="paperQuestionPane" layoutX="403.0" prefHeight="579.0"
+                                prefWidth="567.0" visible="false">
+                        <Button layoutX="412.0" layoutY="442.0" mnemonicParsing="false"
+                                onAction="#addQuestionToPaperButton" text="新增问题">
+                            <font>
+                                <Font name="KaiTi" size="18.0"/>
+                            </font>
+                        </Button>
+                        <Button layoutX="412.0" layoutY="502.0" mnemonicParsing="false"
+                                onAction="#removeQuestionFromPaperButton" text="移除问题">
+                            <font>
+                                <Font name="KaiTi" size="18.0"/>
+                            </font>
+                        </Button>
+                        <TableView fx:id="removeQuestionTable" layoutX="39.0" layoutY="274.0"
+                                   maxHeight="-Infinity" maxWidth="-Infinity"
+                                   onMouseClicked="#clickInPaperQuestion" prefHeight="260.0"
+                                   prefWidth="316.0">
+                            <columns>
+                                <TableColumn fx:id="removeQuestionColumn" prefWidth="314.0"
+                                             text="现有题库"/>
+                            </columns>
+                        </TableView>
+                        <TableView fx:id="addQuestionTable" layoutX="39.0" layoutY="14.0"
+                                   onMouseClicked="#clickNotInPaperQuestion" prefHeight="260.0"
+                                   prefWidth="316.0">
+                            <columns>
+                                <TableColumn fx:id="addQuestionColumn" minWidth="0.0"
+                                             prefWidth="314.0" text="备用题库"/>
+                            </columns>
+                        </TableView>
+                        <Label fx:id="labelTop" layoutX="420.0" layoutY="34.0" text="操作指南"
+                               textAlignment="CENTER">
+                            <font>
+                                <Font name="KaiTi" size="20.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="label1" layoutX="364.0" layoutY="63.0" prefWidth="192.0"
+                               text="1.在左表中选择操作的问卷" wrapText="true">
+                            <font>
+                                <Font name="KaiTi" size="16.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="label2" layoutX="364.0" layoutY="153.0" text="2.从备用题库选择问题新增"
+                               textAlignment="CENTER">
+                            <font>
+                                <Font name="KaiTi" size="16.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="label3" layoutX="364.0" layoutY="243.0" text="3.从已有题库选择问题移除"
+                               textAlignment="CENTER">
+                            <font>
+                                <Font name="KaiTi" size="16.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="label4" layoutX="364.0" layoutY="333.0" text="4.点右下的按钮以查看回答"
+                               textAlignment="CENTER">
+                            <font>
+                                <Font name="KaiTi" size="16.0"/>
+                            </font>
+                        </Label>
+                    </AnchorPane>
+                </AnchorPane>
+                <AnchorPane fx:id="publishPaperPane" prefHeight="580.0" prefWidth="960.0" visible="false">
+                    <TableView fx:id="publishPaperTable" layoutX="80.0" layoutY="50.0"
+                               prefHeight="470.0" prefWidth="800.0">
+                        <columns>
+                            <TableColumn fx:id="publishPaperIdColumn" prefWidth="50.0" text="序列号"/>
+                            <TableColumn fx:id="publishPaperNameColumn" prefWidth="140.0" text="问卷名字"/>
+                            <TableColumn fx:id="publishPaperVersionColumn" prefWidth="48.0" text="轮次"/>
+                            <TableColumn fx:id="publishPaperTimeColumn" prefWidth="150.0" text="发布时间"/>
+                            <TableColumn fx:id="publishPaperEndTimeColumn" prefWidth="150.0"
+                                         text="截止时间"/>
+                            <TableColumn fx:id="publishPaperTypeColumn" text="发布状态"/>
+                            <TableColumn prefWidth="300.0" text="操作">
+                                <columns>
+                                    <TableColumn fx:id="publishPaperUpdateColumn" prefWidth="90.0"
+                                                 text="更新状态"/>
+                                    <TableColumn fx:id="publishPaperShowColumn" prefWidth="90.0"
+                                                 text="查看问卷详情"/>
+                                </columns>
+                            </TableColumn>
+                        </columns>
+                    </TableView>
+                </AnchorPane>
+                <AnchorPane fx:id="settlePane" prefHeight="610.0" prefWidth="990.0" visible="false">
+                    <ImageView fitHeight="625.0" fitWidth="1000.0" layoutX="-5.0" layoutY="-15.0"
+                               rotate="180.0">
+                        <Image url="@../resource/settleBackGround.png"/>
+                    </ImageView>
+                    <Label alignment="BOTTOM_CENTER" layoutX="430.0" layoutY="63.0" text="修改个人信息">
+                        <font>
+                            <Font name="KaiTi" size="24.0"/>
+                        </font>
+                    </Label>
+                    <Label layoutX="390.0" layoutY="108.0" text="（只需填写您想要修改的内容）">
+                        <font>
+                            <Font name="KaiTi" size="16.0"/>
+                        </font>
+                    </Label>
+                    <TextField fx:id="adminUserName" disable="true" layoutX="402.0" layoutY="160.0"
+                               prefHeight="28.0" prefWidth="200.0" promptText="用户名"/>
+                    <TextField fx:id="adminPassword" layoutX="402.0" layoutY="239.0" prefHeight="28.0"
+                               prefWidth="200.0" promptText="密码"/>
+                    <TextField fx:id="adminName" layoutX="402.0" layoutY="318.0" prefHeight="28.0"
+                               prefWidth="200.0" promptText="姓名"/>
+                    <TextField fx:id="adminPhone" layoutX="402.0" layoutY="400.0" prefHeight="28.0"
+                               prefWidth="200.0" promptText="联系电话"/>
+                    <Button layoutX="468.0" layoutY="480.0" mnemonicParsing="false" onAction="#Finish"
+                            text="完成">
+                        <font>
+                            <Font name="KaiTi" size="20.0"/>
+                        </font>
+                    </Button>
+                    <Button fx:id="back" layoutX="21.0" layoutY="21.0" mnemonicParsing="false"
+                            onAction="#back" text="返回">
+                        <font>
+                            <Font name="KaiTi" size="20.0"/>
+                        </font>
+                    </Button>
+                </AnchorPane>
+            </StackPane>
+        </AnchorPane>
+    </AnchorPane>
+</AnchorPane>

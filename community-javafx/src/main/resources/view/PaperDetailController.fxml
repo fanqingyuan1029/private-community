@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.fqy.controller.PaperDetailController">
+   <ScrollPane fx:id="paperDetail" prefHeight="600.0" prefWidth="600.0">
+      <ImageView fitHeight="700.0" fitWidth="800.0">
+         <Image url="@../resource/图片6.png"/>
+      </ImageView>
+   </ScrollPane>
+</AnchorPane>
